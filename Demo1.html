@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TICKFLIX</title>
+    <link href="Demo1.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">TICKFLIX</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#movies">Movies</a></li>
+                    <li><a href="#mytickets">My Tickets</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a href="#login" class="btn-login">Login</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <h2>Hai Kamu! Mau nonton apa hari ini?</h2>
+            <!-- Tombol PESAN mengarah ke section booking -->
+            <button class="btn-cta" onclick="document.getElementById('booking').scrollIntoView();">PESAN</button>
+        </section>
+
+        <!-- Movies Section -->
+        <section id="movies">
+            <h2 style="text-align: center;">Available Movies</h2>
+            <p style="margin-bottom: 10px;"></p> <!-- Tambahkan jarak 10px -->
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <img src="https://image.tmdb.org/t/p/w500/6stnAm1wSek8ZrislwK4xGTyCnt.jpg">
+                    <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">The Proposal</h3>
+                    <p>⭐ 8.5</p>
+                </div>
+                <div class="movie-card">
+                    <img src="https://image.tmdb.org/t/p/w500/g5IoYeudx9XBEfwNL0fHvSckLBz.jpg" alt="Movie Poster 2">
+                    <h3>Scott Pilgrim vs The World</h3>
+                    <p>⭐ 7.9</p>
+                </div>
+                <div class="movie-card">
+                    <img src="https://image.tmdb.org/t/p/w500/7BsvSuDQuoqhWmU2fL7W2GOcZHU.jpg" alt="Movie Poster 3">
+                    <h3>Green Book</h3>
+                    <p>⭐ 6.3</p>
+                </div> 
+                <div class="movie-grid">
+                    <div class="movie-card">
+                        <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg">
+                        <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Dune : Part Two</h3>
+                        <p>⭐ 9.9</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://image.tmdb.org/t/p/w500/i0yw1mFbB7sNGHCs7EXZPzFkdA1.jpg" alt="Movie Poster 5">
+                        <h3>Rogue One : A Star Wars Story</h3>
+                        <p>⭐ 8.4</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://image.tmdb.org/t/p/w500/2DAlwQVzW89uFBtLiW52M5mAGXR.jpg" alt="Movie Poster 7">
+                        <h3>Spider-Man : Across the Spider-Verse</h3>
+                        <p>⭐ 6.3</p>
+                    </div> 
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking">
+            <h2>Book Your Tickets</h2>
+            <form>
+                <label for="cinema">Choose Cinema</label>
+                <select id="cinema">
+                    <option value="cinema1">Cinema 1</option>
+                    <option value="cinema2">Cinema 2</option>
+                </select>
+
+                <label for="movie">Choose Movie</label>
+                <select id="movie">
+                    <option value="movie1">The Proposal</option>
+                    <option value="movie2">Scott Pilgrim vs The World</option>
+                    <option value="movie3">Green Book</option>
+                    <option value="movie4">Dune : Part Two</option>
+                    <option value="movie5">Rogue One : A Star Wars Story</option>
+                </select>
+
+                <label for="date">Choose Date</label>
+                <input type="date" id="date">
+
+                <label for="time">Choose Time</label>
+                <select id="time">
+                    <option value="13:15">13.15</option>
+                    <option value="14:00">14:00</option>
+                    <option value="16:30">16:30</option>
+                </select>
+
+                <button class="submit" onclick="document.getElementById('header').scrollIntoView();">Book Now</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-social">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#movies">Movies</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+
+        <p>&copy; 2024 TICKFLIX. All rights reserved.</p>
+    </footer>
+</body>
+</html>
