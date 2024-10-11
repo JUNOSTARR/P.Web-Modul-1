@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #c0c0c0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 80vw; /* Dynamic width */
+            max-width: 600px; /* Max width for larger screens */
+        }
+        h2 {
+            text-align: center;
+            font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+            color: #000000;
+             
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #fafafa;
+            font-size: 1rem;
+            background-color: #e5e4e4;
+            color: #000000;
+        }
+        .password-container {
+            position: relative;
+        }
+        .password-container .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #c32b2b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform ease 0.3s;
+        }
+        button:hover {
+            background-color: #c73838;
+            transform: scale(1.03);
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90vw; /* Adjust width for smaller screens */
+                padding: 1.5rem;
+            }
+            button {
+                font-size: 0.9rem;
+            }
+            input[type="text"], input[type="email"], input[type="password"] {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sign-Up</h2>
+    <form id="myForm">
+        <label for="nama">Nama :</label>
+        <input type="text" id="nama" name="nama">
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email">
+        
+        <label for="alamat">Alamat :</label>
+        <input type="text" id="alamat" name="alamat">
+
+        <label for="Username">Enter Username :</label>
+        <input type="text" id="Username" name="Username">
+
+        <label for="Password">Password :</label>
+        <div class="password-container">
+            <input type="password" id="Password" name="Password">
+            <input type="checkbox" onclick="togglePassword()">Show Password
+        </div>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        const nama = document.getElementById('nama').value;
+        const alamat = document.getElementById('alamat').value;
+        const email = document.getElementById('email').value;
+        const Username = document.getElementById('Username').value;
+        const Password = document.getElementById('Password').value;
+
+        if (nama === "" || alamat === "" || email === "" || Username == "" || Password == "") {
+            alert("Data harus diisi");
+        } else {
+            alert("Form berhasil dikirim");
+            document.getElementById('myForm').reset();
+        }
+    }
+
+    function togglePassword() {
+        const passwordInput = document.getElementById('Password');
+        const passwordIcon = document.querySelector('.toggle-password');
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text"
+        } else {
+            passwordInput.type = "password";
+        }
+    }
+</script>
+
+</body>
+</html>
