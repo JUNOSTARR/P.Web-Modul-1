@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjumlahan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #d3d3d3;
+        }
+        .container {
+            background-color: #eae9e9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="number"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #e8e8e8;
+            font-size: 16px;
+            background-color: rgb(233, 222, 222);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.34);
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: rgb(27, 222, 151);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.34);
+        }
+        button:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+            background-color: rgb(158, 237, 208);
+        }
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Penjumlahan</h2>
+    <label for="bilangan1">Bilangan pertama</label>
+    <input type="number" id="bilangan1" value="1">
+    <label for="bilangan2">Bilangan kedua</label>
+    <input type="number" id="bilangan2" value="2">
+    <br>
+    <button onclick="hitung()">Jumlahkan</button>
+    <button onclick="reset()">Reset</button>
+    <div id="result">Hasil: 0</div>
+</div>
+
+<script>
+    function hitung() {
+        const bilangan1 = parseFloat(document.getElementById('bilangan1').value);
+        const bilangan2 = parseFloat(document.getElementById('bilangan2').value);
+        const hasil = bilangan1 + bilangan2;
+        document.getElementById('result').innerHTML = 'Hasil: ' + hasil;
+    }
+
+    function reset() {
+        document.getElementById('bilangan1').value = 0;
+        document.getElementById('bilangan2').value = 0;
+        document.getElementById('result').innerHTML = 'Hasil: 0';
+    }
+</script>
+
+</body>
+</html>
