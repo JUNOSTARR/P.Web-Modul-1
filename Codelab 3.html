@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #400202;
+            color: #ffff;
+        }
+        .container {
+            background-color: #7e0d0d96;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 60%;
+        }
+        h2 {
+            text-align: center;
+            font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+            color: #ccc;
+            text-shadow: 
+                0 0 10px rgba(255, 255, 255, 0.8),  
+                0 0 20px rgba(255, 0, 0, 0.7),     
+                0 0 30px rgba(255, 0, 0, 0.6),     
+                0 0 40px rgba(255, 0, 0, 0.5),     
+                0 0 50px rgba(255, 0, 0, 0.4);  
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 97.5%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #400202;
+            font-size: 16px;
+            align-items: center;
+            background-color: #400202;
+            color: #ffff;
+        }
+        .password-container {
+            position: relative;
+        }
+        .password-container input {
+            width: 97.5%;
+        }
+        .password-container .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #c42121;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform ease 0.3s;
+        }
+        button:hover {
+            background-color: #c73838;
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sign-Up</h2>
+    <form id="myForm">
+        <label for="nama">Nama :</label>
+        <input type="text" id="nama" name="nama">
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email">
+        
+        <label for="alamat">Alamat :</label>
+        <input type="text" id="alamat" name="alamat">
+
+        <label for="Username">Enter Username :</label>
+        <input type="text" id="Username" name="Username">
+
+        <label for="Password">Password :</label>
+        <div class="password-container">
+            <input type="password" id="Password" name="Password">
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        const nama = document.getElementById('nama').value;
+        const alamat = document.getElementById('alamat').value;
+        const email = document.getElementById('email').value;
+        const Username = document.getElementById('Username').value;
+        const Password = document.getElementById('Password').value;
+
+        if (nama === "" || alamat === "" || email === "" || Username == "" || Password == "") {
+            alert("Data harus diisi");
+        } else {
+            alert("Form berhasil dikirim");
+            document.getElementById('myForm').reset();
+        }
+    }
+
+    function togglePassword() {
+        const passwordInput = document.getElementById('Password');
+        const passwordIcon = document.querySelector('.toggle-password');
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passwordIcon.textContent = "👁️‍🗨️"; // Change icon when password is visible
+        } else {
+            passwordInput.type = "password";
+            passwordIcon.textContent = "👁️"; // Change back when hidden
+        }
+    }
+</script>
+
+</body>
+</html>
